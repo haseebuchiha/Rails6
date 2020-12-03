@@ -1,13 +1,13 @@
 development:
-  adapter: postgresql
-  database: alpha_blog_development
-  pool: 5
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  database: db/developmentyolo.sqlite3
 test:
-  adapter: postgresql
-  database: alpha_blog_test
-  pool: 5
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  database: db/testyolo.sqlite3
 
 production:
   adapter: postgresql
