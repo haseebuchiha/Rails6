@@ -1,10 +1,12 @@
 development:
-  adapter: postgresql
+  adapter: sqlite3
   database: alpha_blog_development
   pool: 5
   timeout: 5000
+  # adapter: sqlite3
+  
 test:
-  adapter: postgresql
+  adapter: sqlite3
   database: alpha_blog_test
   pool: 5
   timeout: 5000
