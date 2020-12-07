@@ -7921,3 +7921,953 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.8ms | Allocations: 9971)
 
 
+Started GET "/articles" for ::1 at 2020-12-04 21:53:12 +0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (3.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 2453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 223)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 130)
+Completed 200 OK in 63ms (Views: 55.3ms | ActiveRecord: 3.0ms | Allocations: 10062)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 21:53:16 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.3ms | Allocations: 991)
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 8023)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:37:48 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.8ms | Allocations: 1260)
+  Rendered articles/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1982)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 3938)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="container">
+  
+  <% if @article.errors.any? %>
+  <h2>The following errors prevented the article from being saved</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article, local: true) do |f| %>
+      <div class="form-group row">
+        <%= f.label :title, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_field :title, class: "form-control shadow rounded, placeholder: "Title of article" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :description, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_area :description %>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.submit class: "btn btn-outline-light btn-lg" %>
+      </div>
+      <% end %>
+    </div>
+    <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
+  </div>
+</div>
+):
+1:    
+2:    <div class="container">
+3:      
+4:      <% if @article.errors.any? %>
+5:      <h2>The following errors prevented the article from being saved</h2>
+6:      <ul>
+7:        <% @article.errors.full_messages.each do |msg| %>
+8:        <li><%= msg %></li>
+9:        <% end %>
+10:      </ul>
+11:      <% end %>
+12:      
+13:      <div class="row justify-content-center">
+14:        <div class="col-10">
+15:          <%= form_with(model: @article, local: true) do |f| %>
+16:          <div class="form-group row">
+17:            <%= f.label :title, class: "col-2 col-form-label text-light" %>
+18:            <div class="col-10">
+19:              <%= f.text_field :title, class: "form-control shadow rounded, placeholder: "Title of article" %>
+20:            </div>
+21:          </div>
+22:          <div class="form-group row">
+23:            <%= f.label :description, class: "col-2 col-form-label text-light" %>
+24:            <div class="col-10">
+25:              <%= f.text_area :description %>
+26:            </div>
+27:          </div>
+28:          <div class="form-group row justify-content-center">
+29:            <%= f.submit class: "btn btn-outline-light btn-lg" %>
+30:          </div>
+31:          <% end %>
+32:        </div>
+33:        <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
+34:      </div>
+35:    </div>
+  
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2020-12-04 22:41:16 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 10.2ms | Allocations: 1262)
+  Rendered articles/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1983)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms | Allocations: 3940)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="container">
+  
+  <% if @article.errors.any? %>
+  <h2>The following errors prevented the article from being saved</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article, local: true) do |f| %>
+      <div class="form-group row">
+        <%= f.label :title, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_field :title, class: "form-control shadow rounded, placeholder: "Title of Food" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :description, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_area :description, row: 10, class: "form-control shadow rounded", placeholder: "Description of food" %>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.submit class: "btn btn-outline-light btn-lg" %>
+      </div>
+      <% end %>
+    </div>
+    <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
+  </div>
+</div>
+):
+1:    
+2:    <div class="container">
+3:      
+4:      <% if @article.errors.any? %>
+5:      <h2>The following errors prevented the article from being saved</h2>
+6:      <ul>
+7:        <% @article.errors.full_messages.each do |msg| %>
+8:        <li><%= msg %></li>
+9:        <% end %>
+10:      </ul>
+11:      <% end %>
+12:      
+13:      <div class="row justify-content-center">
+14:        <div class="col-10">
+15:          <%= form_with(model: @article, local: true) do |f| %>
+16:          <div class="form-group row">
+17:            <%= f.label :title, class: "col-2 col-form-label text-light" %>
+18:            <div class="col-10">
+19:              <%= f.text_field :title, class: "form-control shadow rounded, placeholder: "Title of Food" %>
+20:            </div>
+21:          </div>
+22:          <div class="form-group row">
+23:            <%= f.label :description, class: "col-2 col-form-label text-light" %>
+24:            <div class="col-10">
+25:              <%= f.text_area :description, row: 10, class: "form-control shadow rounded", placeholder: "Description of food" %>
+26:            </div>
+27:          </div>
+28:          <div class="form-group row justify-content-center">
+29:            <%= f.submit class: "btn btn-outline-light btn-lg" %>
+30:          </div>
+31:          <% end %>
+32:        </div>
+33:        <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
+34:      </div>
+35:    </div>
+  
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:25: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:25: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:25: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:25: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:25: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/_form.html.erb:19: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:22: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:23: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:25: syntax error, unexpected constant, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:28: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:28: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:29: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:29: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:33: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/_form.html.erb:33: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/articles/_form.html.erb:37: unterminated string meets end of file
+app/views/articles/_form.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2020-12-04 22:42:08 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 8.9ms | Allocations: 1135)
+  Rendered articles/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 222)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 130)
+Completed 200 OK in 55ms (Views: 48.9ms | ActiveRecord: 0.0ms | Allocations: 9494)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:44:04 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 12.4ms | Allocations: 1121)
+  Rendered articles/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 1860)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 222)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 130)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.0ms | Allocations: 9453)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:45:45 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 10.6ms | Allocations: 784)
+  Rendered articles/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 7435)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:47:18 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 14.7ms | Allocations: 1117)
+  Rendered articles/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 222)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 130)
+Completed 200 OK in 74ms (Views: 70.2ms | ActiveRecord: 0.0ms | Allocations: 9458)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:47:54 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.7ms | Allocations: 1118)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 222)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 130)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 9451)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:47:55 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.5ms | Allocations: 784)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 7431)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:47:56 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.9ms | Allocations: 775)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1287)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 68)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 7413)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:50:08 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 6.6ms | Allocations: 1127)
+  Rendered articles/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1872)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 222)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 130)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.0ms | Allocations: 9474)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:50:27 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 10.5ms | Allocations: 1126)
+  Rendered articles/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 222)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 130)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.0ms | Allocations: 9472)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-04 22:50:50 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 7.0ms | Allocations: 1127)
+  Rendered articles/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 223)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 130)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 9472)
+
+
+Started GET "/articles/edit" for ::1 at 2020-12-04 22:50:59 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+Completed 404 Not Found in 22ms (ActiveRecord: 1.9ms | Allocations: 1916)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=edit):
+  
+app/controllers/articles_controller.rb:45:in `set_article'
+Started GET "/articles/1/edit" for ::1 at 2020-12-04 22:51:04 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1794)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=1):
+  
+app/controllers/articles_controller.rb:45:in `set_article'
+Started GET "/articles/3/edit" for ::1 at 2020-12-04 22:51:06 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.7ms | Allocations: 836)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 9002)
+
+
+Started PATCH "/articles/3" for ::1 at 2020-12-07 14:46:18 +0500
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"2EeCSH/SjOR8DnqlorzPWeKUvemO4AWFAuXQZ9Qw+JkS1dqU4KZ0gce1QxPAEwDnfyBa3PYGDOhVm4fJKLg6CQ==", "article"=>{"title"=>"Dahi chana chaat", "description"=>"Verry cchat "}, "commit"=>"Update Article", "id"=>"3"}
+  [1m[36mArticle Load (1.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mArticle Update (1.1ms)[0m  [1m[33mUPDATE "articles" SET "description" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["description", "Verry cchat "], ["updated_at", "2020-12-07 09:46:18.908956"], ["id", 3]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 23ms (ActiveRecord: 4.3ms | Allocations: 7073)
+
+
+Started GET "/articles/3" for ::1 at 2020-12-07 14:46:18 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 19)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.4ms | Allocations: 7871)
+
+
+Started GET "/articles/3/edit" for ::1 at 2020-12-07 14:46:29 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.3ms | Allocations: 827)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 68)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 8773)
+
+
+Started PATCH "/articles/3" for ::1 at 2020-12-07 14:46:33 +0500
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"igN/4uQmFt9fbND+auCl+cuArFuCtaLC6y0/4QxrYk51GtCLtzjLVe/XHh6MG8bf+VPHPgknX79y+mwtSL64tQ==", "article"=>{"title"=>"Dahi chana chaat", "description"=>"Ver"}, "commit"=>"Update Article", "id"=>"3"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.7ms | Allocations: 975)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.4ms | Allocations: 10040)
+
+
+Started GET "/articles/3" for ::1 at 2020-12-07 15:03:35 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 264)
+Started GET "/articles/3" for ::1 at 2020-12-07 15:03:35 +0500
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 8.4ms | Allocations: 2025)
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendered layouts/_messages.html.erb (Duration: 1.9ms | Allocations: 673)
+Completed 200 OK in 46ms (Views: 40.5ms | ActiveRecord: 0.8ms | Allocations: 13316)
+
+
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 3.4ms | Allocations: 9015)
+
+
+Started GET "/articles/3/edit" for ::1 at 2020-12-07 15:03:38 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (1.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.8ms | Allocations: 173)
+  Rendered articles/_form.html.erb (Duration: 7.5ms | Allocations: 1985)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 16.8ms | Allocations: 2700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 39ms (Views: 28.7ms | ActiveRecord: 1.5ms | Allocations: 10254)
+
+
+Started PATCH "/articles/3" for ::1 at 2020-12-07 15:03:41 +0500
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"kyasUVd7ec/erwHmz0W5A9Yn0Mee3WgRKODxplhi5p5sPwM4BGWkRW4UzwYpvtol5PS7ohVPlWyxN6JqHLc8ZQ==", "article"=>{"title"=>"Dahi chana chaat", "description"=>""}, "commit"=>"Update Article", "id"=>"3"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.6ms | Allocations: 259)
+  Rendered articles/_form.html.erb (Duration: 3.2ms | Allocations: 1673)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.4ms | Allocations: 10991)
+
+
+Started GET "/articles/3" for ::1 at 2020-12-07 15:04:12 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (3.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 115)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 53ms (Views: 40.3ms | ActiveRecord: 3.2ms | Allocations: 7533)
+
+
+Started GET "/articles/3" for ::1 at 2020-12-07 15:05:13 +0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 418)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 232)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 162)
+Completed 200 OK in 140ms (Views: 118.1ms | ActiveRecord: 5.9ms | Allocations: 20105)
+
+
+Started GET "/articles/3/edit" for ::1 at 2020-12-07 15:05:18 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.9ms | Allocations: 177)
+  Rendered articles/_form.html.erb (Duration: 21.8ms | Allocations: 3117)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 24.0ms | Allocations: 3408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 41ms (Views: 31.9ms | ActiveRecord: 0.8ms | Allocations: 8324)
+
+
+Started PATCH "/articles/3" for ::1 at 2020-12-07 15:05:21 +0500
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"3fC82V4ySAew4eXMlfWdpOxt3BQTJOBpqd1xUrIl7OUi6ROwDSyVjQBaKyxzDv6C3r63cZi2HRQwCiKe9vA2Hg==", "article"=>{"title"=>"Dahi chana chaat", "description"=>""}, "commit"=>"Update Article", "id"=>"3"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.4ms | Allocations: 265)
+  Rendered articles/_form.html.erb (Duration: 2.4ms | Allocations: 1167)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 7649)
+
+
+Started GET "/NEW" for ::1 at 2020-12-07 15:05:30 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/NEW"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/new" for ::1 at 2020-12-07 15:05:33 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles" for ::1 at 2020-12-07 15:05:39 +0500
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1465)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.4ms | Allocations: 5859)
+
+
+Started GET "/articles/new" for ::1 at 2020-12-07 15:05:41 +0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered articles/_form.html.erb (Duration: 3.5ms | Allocations: 887)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5402)
+
+
+Started POST "/articles" for ::1 at 2020-12-07 15:06:41 +0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"W/tD+76BCKtQmZdiV0GWVVUMkpDrrLIeJaa7c+C1CfuRaRsnIfXwzusirtQ17lnryLh1pZNKu3Ny2OzdHD3Law==", "article"=>{"title"=>"This is not food its shit", "description"=>"Shit is not included as food. This is cuisine for the flies. Stay away"}, "commit"=>"Create Article"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mArticle Create (1.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "This is not food its shit"], ["description", "Shit is not included as food. This is cuisine for the flies. Stay away"], ["created_at", "2020-12-07 10:06:41.472927"], ["updated_at", "2020-12-07 10:06:41.472927"]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 53ms (ActiveRecord: 10.9ms | Allocations: 2829)
+
+
+Started GET "/articles/5" for ::1 at 2020-12-07 15:06:41 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 19)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.7ms | Allocations: 4898)
+
+
+Started GET "/articles/5" for ::1 at 2020-12-07 15:56:52 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 511)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 223)
+  Rendered layouts/_messages.html.erb (Duration: 4.5ms | Allocations: 154)
+Completed 200 OK in 34ms (Views: 23.6ms | ActiveRecord: 2.2ms | Allocations: 6912)
+
+
+Started GET "/articles/5/edit" for ::1 at 2020-12-07 15:57:01 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.4ms | Allocations: 170)
+  Rendered articles/_form.html.erb (Duration: 3.1ms | Allocations: 1454)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1744)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 6658)
+
+
+Started PATCH "/articles/5" for ::1 at 2020-12-07 15:57:19 +0500
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"UZKYKwOXiK+2cM0bip5ZeXBv6FKKI7unRWvYkRjL7Lq0BUrjM1KaQ0eQb9Pd4yoyB/pZV5TURZBPzVTkBSE50w==", "article"=>{"title"=>"This is not food its shit", "description"=>"This menu includes:\r\n1. Shit\r\n2. more shit\r\n3. some more shit"}, "commit"=>"Update Article", "id"=>"5"}
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mArticle Update (0.6ms)[0m  [1m[33mUPDATE "articles" SET "description" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["description", "This menu includes:\r\n1. Shit\r\n2. more shit\r\n3. some more shit"], ["updated_at", "2020-12-07 10:57:19.055306"], ["id", 5]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 23ms (ActiveRecord: 10.3ms | Allocations: 3376)
+
+
+Started GET "/articles/5" for ::1 at 2020-12-07 15:57:19 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 69)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 19)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 5114)
+
+
+Started GET "/articles/5" for ::1 at 2020-12-07 15:58:10 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 223)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 154)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 6787)
+
+
+Started GET "/articles/5" for ::1 at 2020-12-07 15:58:41 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:45:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 223)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 154)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.4ms | Allocations: 6780)
+
+
